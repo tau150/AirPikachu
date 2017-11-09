@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'room_menu' %>
+  </div>
+  <div class="col-md-9">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">Photos</h4>
+        <div>
+          <%=  form_for @room, url: room_photos_path(@room), method: 'post', html: {multipart: true} do |f|  %>
+            <div class="row justify-content-center">
+              <div class="form-group col-md-6 ">
+                <span class="btn btn-default btn-file text-babu">
+                  Select photos
+                  <%= file_field_tag "images[]", type: :file, multiple: true %>
+                </span>
+              </div>
+            </div>
+
+          <div class="text-center">
+            <%= f.submit "Add photos", class:"btn btn-form" %>
+          </div>
+          <% end %>
+        </div>
+    </div>
+      <div id="photos">
+        <%= render 'photos/photos_list' %>
+      </div>
+   </div>
+  </div>
+</div>

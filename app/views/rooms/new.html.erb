@@ -1,0 +1,60 @@
+
+<!-- <div class="col-md-12"> -->
+<div class="card">
+  <div class="card-block">
+    <h4 class="card-title">Create your beautiful place</h4>
+    <%=  form_for @room do |f| %>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Home type</label>
+            <%= f.select :home_type, [["Apartment", "Apartment"],["House", "House"], ["Bed & Breakfast", "Bed & Breakfast"]],
+                                     {prompt: "Select..."}, {class: "form-control", id: "home_type"} %>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+
+          <div class="form-group">
+            <label>Room type</label>
+            <%= f.select :room_type, [["Entire", "Entire"], ["Private", "Private"], ["Shared", "Shared"]],
+                                      {prompt: "Select..."}, {class: "form-control", id: "room_type"}  %>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Accomodate</label>
+            <%= f.select :accomodate, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
+                                       {prompt: "Select..."}, {class: "form-control", id: "accommodate"}  %>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Bedrooms</label>
+            <%= f.select :bed_room, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
+                                    {prompt: "Select..."}, {class: "form-control", id: "bed_room"}  %>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Bathrooms</label>
+            <%= f.select :bath_room, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
+                                      {prompt: "Select..."}, {class: "form-control", id: "bath_room"}  %>
+          </div>
+        </div>
+
+      </div>
+
+      <div class='text-center'>
+          <%= f.submit "Create my room", class:"btn btn-normal" %>
+      </div>
+
+
+    <% end %>
+
+  </div>
+</div>
+<!-- </div> -->

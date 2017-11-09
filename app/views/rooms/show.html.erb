@@ -1,0 +1,89 @@
+<div class="row">
+  <div class="col-md-12">
+    <%= image_tag @room.cover_photo(nil), width: '100%' %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-8">
+        <h1><%= @room.listing_name %></h1>
+        <%= @room.address %>
+      </div>
+      <div class="col-md-4 text-center">
+        <%= image_tag avatar_url(@room.user), class: 'rounded-circle avatar_medium' %> <br><br>
+        <%= @room.user.fullname %>
+      </div>
+  </div>
+
+  <hr>
+
+    <div class="row d-flex flex-row justify-content-between text-babu">
+
+        <div class="col-md-3 text-center">
+          <i class="fa fa-home fa-2x"></i>
+        </div>
+        <div class="col-md-3 text-center">
+          <i class="fa fa-user-circle-o fa-2x"></i>
+        </div>
+        <div class="col-md-3 text-center">
+          <i class="fa fa-bed fa-2x"></i>
+        </div>
+        <div class="col-md-3 text-center">
+          <i class="fa fa-bath fa-2x"></i>
+        </div>
+      </div>
+
+      <div class="row d-flex flex-row justify-content-between text-babu">
+        <div class="col-md-3 text-center"><%=@room.home_type %></div>
+        <div class="col-md-3 text-center"><%=pluralize(@room.accomodate, 'Guest') %></div>
+        <div class="col-md-3 text-center"><%=pluralize(@room.bed_room, 'Bedroom')%></div>
+        <div class="col-md-3 text-center"><%=pluralize(@room.accomodate, 'Bathroom')%></div>
+      </div>
+      <hr>
+
+      <div class="row">
+        <div class="col-md-12 mt-4">
+          <h3>About this listing</h3>
+          <p><%= @room.summary %></p>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-3">
+        <h4 class='pt-3'>Amenities</h4>
+      </div>
+      <div class="col-md-9">
+        <div class='row'>
+          <div class="col-md-6">
+            <ul class="amenities">
+              <li class='<%= 'text-line-through' if !@room.is_tv %>'>TV</li>
+              <li>kitchen</li>
+              <li>Internet</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="amenities">
+              <li>Heating</li>
+              <li>Air conditioning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+    <div class="row">
+      <hr>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+
+  </div>
+</div>
+</div>

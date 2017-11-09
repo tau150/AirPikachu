@@ -1,0 +1,14 @@
+<% if @photos.count > 0 %>
+  <br><br>
+
+  <div class="row container-photos-uploaded">
+      <% @photos.each do |photo| %>
+      <div class="col-md-4 container-photo">
+           <%= image_tag photo.image.url(), class: 'img-fluid' %>
+            <span class="pull-right">
+              <%= link_to "<i class='fa fa-trash-o' aria-hidden='true'> </i>".html_safe, room_photo_path(photo.room_id, photo), remote: true, method: :delete, data: {confirm: "Are you sure"} %>
+            </span>
+      </div>
+    <%end%>
+  </div>
+<%end%>

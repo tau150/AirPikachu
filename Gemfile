@@ -21,8 +21,14 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'toastr-rails', '~> 1.0'
-gem 'devise'
+gem 'devise', '~> 4.2'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
+
+gem 'omniauth', '~> 1.6'
+gem 'omniauth-facebook', '~> 4.0'
+
+gem 'paperclip', '~> 5.1.0'
+gem 'aws-sdk', '~> 2.8'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
